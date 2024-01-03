@@ -1,12 +1,9 @@
 def balanced(expression):
     stack = []
-
     mapping = {')': '(', '}': '{', ']': '['}
-
     for char in expression:
         if char in '({[':
             stack.append(char)
-            print(stack)
         elif char in ')}]':
             if not stack or stack[-1] != mapping[char]:
                 return False
